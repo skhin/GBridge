@@ -60,9 +60,10 @@ function ComputerGenerateRandomTiles(SetofTiles) {
 
   return Tiles;
 }
+// console.log(ComputerGenerateRandomTiles());
 
 //start button control
-startBtn.addEventListener("mousedown", () => {
+startBtn.addEventListener("click", () => {
   startgame = true;
   interval = setInterval(() => {
     if (time > 0) {
@@ -77,7 +78,7 @@ startBtn.addEventListener("mousedown", () => {
 
 //once the game starts
 glassTiles.forEach((tile) => {
-  tile.addEventListener("mousedown", () => {
+  tile.addEventListener("click", () => {
     //checking if startgame button was pressed
     if (!startgame) {
       return (comments.innerHTML = "Please press the start button!");
@@ -112,7 +113,7 @@ glassTiles.forEach((tile) => {
 });
 
 glassTiles.forEach((tile) => {
-  tile.addEventListener("mouseup", () => {
+  tile.addEventListener("click", () => {
     //checking if startgame button was pressed
     if (!startgame) return;
     if (!previousTileCleared) return;
@@ -137,7 +138,7 @@ glassTiles.forEach((tile) => {
       //if the player stepped onto the correct tile then i++
       i++;
       movePlayer(tile);
-      //   console.log("go next");
+      //   console.log("move on");
       comments.innerText = "Move forward!";
     }
   });
@@ -163,6 +164,7 @@ function getRandom(min, max) {
   max++; //since the max value is not included
   return Math.floor(Math.random() * (max - min)) + min;
 }
+// console.log(getRandom());
 
 // player moving to the next tile set
 function movePlayer(tile) {
