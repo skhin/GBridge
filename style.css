@@ -220,3 +220,24 @@ img {
   align-items: center;
   font-size: 40px;
 }
+
+.gameover-text {
+  text-align: center;
+  font-size: 70px;
+}
+#restart-btn {
+  display: block;
+  margin: 0 auto;
+  height: 100px;
+  background-color: #136452;
+  color: white;
+  font-size: 45px;
+  border-radius: 10px;
+  width: 70%;
+}
+
+#restart-btn:hover {
+  background-color: #d62473;
+  color: whitesmoke;
+  border: none;
+}
