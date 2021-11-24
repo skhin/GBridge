@@ -70,24 +70,14 @@ img {
 }
 .audio-btn {
   border: none;
-  height: 30%;
-  width: 20%;
-  border-radius: 10px;
-  padding: 5px 0 5px 0;
-  font-size: 25px;
-  font-weight: bolder;
+  width: 250%;
+  border-radius: 30px;
+  padding: 10px 0 10px 0;
+  font-size: 35px;
   background-color: #136452;
   color: gold;
   cursor: pointer;
-  text-align: center;
-}
-
-.audio-btn:hover {
-  color: black;
-  background-color: #d62473;
-  width: 18%;
-  height: 30%;
-  border: 1px solid white;
+  /* text-align: center; */
 }
 
 .game-timer {

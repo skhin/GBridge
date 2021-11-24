@@ -59,9 +59,10 @@
         <div class="game-timer">
           <!-- audio button -->
           <div class="audio-control">
-            <span class="audio-btn">
-              <i class="fas fa-volume-up" id="audio-btn"></i>
-            </span>
+            <audio id="myAudio" src="./media/theme.mp3" preload="auto"></audio>
+            <a onClick="togglePlay()"
+              ><button class="audio-btn"><i class="fas fa-music"></i></button
+            ></a>
           </div>
 
           <button class="start-btn" id="start-btn">START GAME</button>

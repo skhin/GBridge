@@ -1,35 +1,41 @@
 // GAME CODES
 
-const glassTiles = document.querySelectorAll(".glass-tile");
+const instructionBtn = document.getElementById("instructions-btn");
+const startBtn = document.getElementById("start-btn");
 const timer = document.getElementById("timer");
 const comments = document.getElementById("comments");
 const livesCount = document.querySelector(".lives-count");
 const player = document.querySelector(".player-icon");
-const startPosition = document.querySelector(".player-start-position");
-const instructionBtn = document.getElementById("instructions-btn");
-const gameoverScreen = document.querySelector(".gameover-screen");
-const gameoverText = document.querySelector(".gameover-text");
 const gameBody = document.querySelector(".game-body");
-const restartBtn = document.getElementById("restart-btn");
+const glassTiles = document.querySelectorAll(".glass-tile");
+const startPosition = document.querySelector(".player-start-position");
 const endPosition = document.querySelector(".player-end-position");
 const endPositionHolder = document.querySelector(".end-position");
-const startBtn = document.getElementById("start-btn");
-const audioBtn = document.getElementById("audio-btn");
+const gameoverScreen = document.querySelector(".gameover-screen");
+const gameoverText = document.querySelector(".gameover-text");
+const restartBtn = document.getElementById("restart-btn");
+
+// Toggle audio
+const myAudio = document.getElementById("myAudio");
+
+function togglePlay() {
+  return myAudio.paused ? myAudio.play() : myAudio.pause();
+}
 
 let time = 30;
-let randomLosingTiles = [];
+let startgame = false;
 let totalLife = 3;
+let randomLosingTiles = [];
 let loseLife = false;
 let previousTileCleared = true;
-let i = 1;
 let previousTile;
 let playerIcon;
+let i = 1;
 let gameover = false;
-let startgame = false;
 let interval;
 
 // SETTING THE TILES
-const SetofTiles = {
+const tilesArray = {
   1: [1, 2],
   2: [3, 4],
   3: [5, 6],
@@ -48,36 +54,22 @@ function instructions() {
 instructionBtn.addEventListener("click", instructions);
 
 //generating random losing tiles for the game
-randomLosingTiles = ComputerGenerateRandomTiles(SetofTiles);
+randomLosingTiles = ComputerGenerateRandomTiles(tilesArray);
 
 //computer generating random tile numbers to lose
-function ComputerGenerateRandomTiles(SetofTiles) {
+function ComputerGenerateRandomTiles(tilesArray) {
   let Tiles = [];
 
-  for (const set in SetofTiles) {
-    Tiles.push(getRandom(SetofTiles[set][0], SetofTiles[set][1]));
+  for (const set in tilesArray) {
+    Tiles.push(getRandom(tilesArray[set][0], tilesArray[set][1]));
   }
 
   return Tiles;
 }
 // console.log(ComputerGenerateRandomTiles());
 
-//audio button control
-audioBtn.addEventListener("click", () => {
-  if (audioBtn.classList.contains("fa-volume-up")) {
-    audioBtn.classList.add("fa-volume-mute");
-    audioBtn.classList.remove("fa-volume-up");
-    playSong.pause();
-  } else {
-    audioBtn.classList.remove("fa-volume-mute");
-    audioBtn.classList.add("fa-volume-up");
-    playSong.play();
-  }
-});
-
 //start button control
 startBtn.addEventListener("click", () => {
-  // playSong.play();
   startgame = true;
   interval = setInterval(() => {
     if (time > 0) {
@@ -95,12 +87,13 @@ glassTiles.forEach((tile) => {
   tile.addEventListener("click", () => {
     //checking if startgame button was pressed
     if (!startgame) {
-      return (comments.innerHTML = "Please press the start button!");
+      // return (comments.innerHTML = "Please press the start button!");
+      alert("Please press the start button!");
     }
     // checking if the previous tile set was cleared
     if (
-      SetofTiles[i][0] == tile.dataset.value ||
-      SetofTiles[i][1] == tile.dataset.value
+      tilesArray[i][0] == tile.dataset.value ||
+      tilesArray[i][1] == tile.dataset.value
     ) {
       // console.log("previous tile set was cleared");
       previousTileCleared = true;
@@ -117,7 +110,7 @@ glassTiles.forEach((tile) => {
       return;
     }
     if (tile.dataset.value) {
-      comments.innerText = "Previous set has not been selected! Do not cheat!";
+      alert("Previous set has not been selected! Do not cheat!");
       previousTileCleared = false;
       return;
     }
@@ -191,7 +184,6 @@ function gameOver() {
   gameBody.classList.add("hide");
   gameoverScreen.classList.remove("hide");
   clearInterval(interval);
-  playSong.pause();
 }
 
 function winGame() {
