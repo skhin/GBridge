@@ -204,8 +204,8 @@ img {
 
 .player-icon {
   width: 55px;
-  height: 45px;
-  background-color: black;
+  height: 65px;
+  background-color: transparent;
   border-radius: 50%;
 }
 

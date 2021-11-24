@@ -77,7 +77,7 @@ audioBtn.addEventListener("click", () => {
 
 //start button control
 startBtn.addEventListener("click", () => {
-  playSong.play();
+  // playSong.play();
   startgame = true;
   interval = setInterval(() => {
     if (time > 0) {
