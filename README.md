@@ -30,4 +30,4 @@ Moving forward:
 4. I would like to animate more of the selections and buttons with some transorms later on, once my CSS knowledge grows.
 
 End Note:
-For the first project for this course, it
+For the first project for this course, it was a challenge for me as I had not done a game ever nor was my javascript really top-notch. This was an experience and something that would help me improve my coding skills in the future.

@@ -149,7 +149,7 @@ glassTiles.forEach((tile) => {
       }
       //
     } else {
-      //if the player stepped onto the correct tile then i++
+      //if the player steps onto the correct tile then i++
       i++;
       movePlayer(tile);
       //   console.log("move on");
