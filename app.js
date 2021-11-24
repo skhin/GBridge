@@ -67,17 +67,17 @@ audioBtn.addEventListener("click", () => {
   if (audioBtn.classList.contains("fa-volume-up")) {
     audioBtn.classList.add("fa-volume-mute");
     audioBtn.classList.remove("fa-volume-up");
-    backgroundMusic.pause();
+    playSong.pause();
   } else {
     audioBtn.classList.remove("fa-volume-mute");
     audioBtn.classList.add("fa-volume-up");
-    backgroundMusic.play();
+    playSong.play();
   }
 });
 
 //start button control
 startBtn.addEventListener("click", () => {
-  backgroundMusic.play();
+  playSong.play();
   startgame = true;
   interval = setInterval(() => {
     if (time > 0) {
@@ -191,7 +191,7 @@ function gameOver() {
   gameBody.classList.add("hide");
   gameoverScreen.classList.remove("hide");
   clearInterval(interval);
-  backgroundMusic.pause();
+  playSong.pause();
 }
 
 function winGame() {
