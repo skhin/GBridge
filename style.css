@@ -1,9 +1,3 @@
-.wrapper {
-  transform: scale(0.65, 0.65);
-  -ms-transform: scale(0.65, 0.65); /* IE 9 */
-  -webkit-transform: scale(0.65, 0.65); /* Safari and Chrome */
-}
-
 body {
   color: white;
   background-color: black;

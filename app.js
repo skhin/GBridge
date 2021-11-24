@@ -62,8 +62,22 @@ function ComputerGenerateRandomTiles(SetofTiles) {
 }
 // console.log(ComputerGenerateRandomTiles());
 
+//audio button control
+audioBtn.addEventListener("click", () => {
+  if (audioBtn.classList.contains("fa-volume-up")) {
+    audioBtn.classList.add("fa-volume-mute");
+    audioBtn.classList.remove("fa-volume-up");
+    backgroundMusic.pause();
+  } else {
+    audioBtn.classList.remove("fa-volume-mute");
+    audioBtn.classList.add("fa-volume-up");
+    backgroundMusic.play();
+  }
+});
+
 //start button control
 startBtn.addEventListener("click", () => {
+  backgroundMusic.play();
   startgame = true;
   interval = setInterval(() => {
     if (time > 0) {
@@ -141,6 +155,7 @@ glassTiles.forEach((tile) => {
       //   console.log("move on");
       comments.innerText = "Move forward!";
     }
+    // console.log(tile);
   });
 });
 
