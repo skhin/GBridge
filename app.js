@@ -19,6 +19,7 @@ const restartBtn = document.getElementById("restart-btn");
 const myAudio = document.getElementById("myAudio");
 
 function togglePlay() {
+  myAudio.volume = 0.1;
   return myAudio.paused ? myAudio.play() : myAudio.pause();
 }
 

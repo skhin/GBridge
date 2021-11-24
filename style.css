@@ -199,6 +199,12 @@ img {
   border-radius: 50%;
 }
 
+.headman-icon {
+  width: 50px;
+  height: 95px;
+  background-color: transparent;
+}
+
 .fa-trophy {
   font-size: 30px;
   color: gold;
