@@ -12,17 +12,24 @@ body {
   color: rgb(243, 230, 230);
   background-color: black;
   font-family: "Stalinist One", cursive;
+  min-height: 100vh;
+}
+
+.wrapper {
+  transform: scale(0.9, 0.9);
+  -ms-transform: scale(0.9, 0.9); /* IE 9 */
+  -webkit-transform: scale(0.9, 0.9); /* Safari and Chrome */
 }
 
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 40%;
 }
 
 .game-title {
-  width: 90%;
+  width: 80%;
   padding: 10px;
   border: 10px outset #d62473;
   background-color: transparent;
@@ -66,7 +73,7 @@ img {
   font-family: "Stalinist One", cursive;
 }
 .start-btn:hover {
-  background-color: #136452;
+  background-color: #13cbcb;
   border: 2px solid white;
   box-sizing: 60px;
   color: black;
@@ -244,4 +251,8 @@ img {
   background-color: #d62473;
   color: whitesmoke;
   border: none;
+}
+
+h4 {
+  color: #13cbcb;
 }
