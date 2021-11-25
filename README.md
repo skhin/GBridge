@@ -20,14 +20,15 @@ Challenges:
 
 3. I wanted to create a drop down page where if the player wins or they lose their lives, it would hide the game and ask the player to restart.
 
-4. Audio - this took me a whole night and morning to figure out but I only realised my mistake when I did not include the source of the audio. It is the simplest of things that can trip you up
-
 Moving forward:
 
 1. Compressing the game so it fits into both mobile and desktop versions - it takes up 1.5page on the desktop when ideally I would like it to be just one page only.
+
 2. Making the code DRY-er so that I can call the game function each time quickly.
+
 3. Improving on the visuals of it as well as possibly adding in animation when I learn how to do it more.
+
 4. I would like to animate more of the selections and buttons with some transorms later on, once my CSS knowledge grows.
 
 End Note:
-For the first project for this course, it was a challenge for me as I had not done a game ever nor was my javascript really top-notch. This was an experience and something that would help me improve my coding skills in the future.
+This was an experience and something that would help me improve my coding skills in the future.

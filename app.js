@@ -19,14 +19,14 @@ const restartBtn = document.getElementById("restart-btn");
 const myAudio = document.getElementById("myAudio");
 
 function togglePlay() {
-  myAudio.volume = 0.1;
+  myAudio.volume = 0.2;
   return myAudio.paused ? myAudio.play() : myAudio.pause();
 }
 
 let time = 30;
 let startgame = false;
 let totalLife = 3;
-let randomLosingTiles = [];
+let lostTilesRandom = [];
 let loseLife = false;
 let previousTileCleared = true;
 let previousTile;
@@ -54,21 +54,6 @@ function instructions() {
 }
 instructionBtn.addEventListener("click", instructions);
 
-//generating random losing tiles for the game
-randomLosingTiles = ComputerGenerateRandomTiles(tilesArray);
-
-//computer generating random tile numbers to lose
-function ComputerGenerateRandomTiles(tilesArray) {
-  let Tiles = [];
-
-  for (const set in tilesArray) {
-    Tiles.push(getRandom(tilesArray[set][0], tilesArray[set][1]));
-  }
-
-  return Tiles;
-}
-// console.log(ComputerGenerateRandomTiles());
-
 //start button control
 startBtn.addEventListener("click", () => {
   startgame = true;
@@ -83,6 +68,21 @@ startBtn.addEventListener("click", () => {
   }, 1000);
 });
 
+//generating random losing tiles for the game
+lostTilesRandom = ComputerGenerateRandomTiles(tilesArray);
+
+//computer generating random tile numbers to lose
+function ComputerGenerateRandomTiles(tilesArray) {
+  let Tiles = [];
+
+  for (const set in tilesArray) {
+    Tiles.push(getRandom(tilesArray[set][0], tilesArray[set][1]));
+  }
+
+  return Tiles;
+}
+// console.log(ComputerGenerateRandomTiles());
+
 //once the game starts
 glassTiles.forEach((tile) => {
   tile.addEventListener("click", () => {
@@ -91,18 +91,21 @@ glassTiles.forEach((tile) => {
       // return (comments.innerHTML = "Please press the start button!");
       alert("Please press the start button!");
     }
+
     // checking if the previous tile set was cleared
     if (
       tilesArray[i][0] == tile.dataset.value ||
       tilesArray[i][1] == tile.dataset.value
     ) {
-      // console.log("previous tile set was cleared");
+      // console.log("cleared");
+
       previousTileCleared = true;
+
       //removing the player icon from the previous tile
       if (i != 1) previousTile.removeChild(player);
       // checking if it is a losing tile
-      randomLosingTiles.forEach((losingTile) => {
-        if (tile.dataset.value == losingTile) {
+      lostTilesRandom.forEach((lostTile) => {
+        if (tile.dataset.value == lostTile) {
           loseLife = true;
 
           // console.log("lives - 1");
