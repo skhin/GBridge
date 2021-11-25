@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&family=Stalinist+One&display=swap");
 
 body {
-  color: white;
+  color: rgb(243, 230, 230);
   background-color: black;
   font-family: "Stalinist One", cursive;
   min-height: 100%;
@@ -15,8 +15,10 @@ img {
 }
 
 .game-title {
-  width: 70%;
-  border: 1px solid white;
+  width: 90%;
+  padding: 10px;
+  border: 10px outset #d62473;
+  background-color: transparent;
 }
 
 .instructions-btn {
