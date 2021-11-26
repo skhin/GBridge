@@ -16,7 +16,7 @@ Challenges:
 
 1. Laying out the visuals - It was easy to do this via powerpoint when I had to present it. Executing it was another issue as CSS is not my strong suit.
 
-2. Ramdomizing the tiles per set and ensuring the previous tile was remembered - Took me a long time to figure this out. Took a lot of inspiration from coded chess games and online tutorials to determine how to move on this.
+2. Ramdomizing the tiles per set and ensuring the previous tile was remembered - Took me a long time to figure this out. Took a lot of inspiration from coded chess games and whack-a-moles and online tutorials to determine how to move on this.
 
 3. I wanted to create a drop down page where if the player wins or they lose their lives, it would hide the game and ask the player to restart.
 
@@ -29,6 +29,3 @@ Moving forward:
 3. Improving on the visuals of it as well as possibly adding in animation when I learn how to do it more.
 
 4. I would like to animate more of the selections and buttons with some transorms later on, once my CSS knowledge grows.
-
-End Note:
-This was an experience and something that would help me improve my coding skills in the future.
