@@ -156,6 +156,19 @@ glassTiles.forEach((tile) => {
   });
 });
 
+// randomizing each tile set
+function getRandom(min, max) {
+  max++; //since the max value is not included
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+// console.log(getRandom());
+
+// player moving to the next tile set
+function movePlayer(tile) {
+  tile.appendChild(player);
+  previousTile = tile;
+}
+
 //To win the game
 endPosition.addEventListener("click", () => {
   if (i >= 8 && !gameover) {
@@ -170,19 +183,6 @@ endPosition.addEventListener("click", () => {
 restartBtn.addEventListener("click", () => {
   window.location = "./";
 });
-
-// randomizing each tile set
-function getRandom(min, max) {
-  max++; //since the max value is not included
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-// console.log(getRandom());
-
-// player moving to the next tile set
-function movePlayer(tile) {
-  tile.appendChild(player);
-  previousTile = tile;
-}
 
 function gameOver() {
   gameBody.classList.add("hide");
