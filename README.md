@@ -1,6 +1,6 @@
-# SEI33-SG-Project-1-Glass-Bridge
+# Project-1-GBridge
 
-SEI33 (SG) Project1: Glass Bridge
+Project1: GBridge
 
 Squid Game is a South Korean Netflix drama phenomenon that has taken the world by storm.
 
