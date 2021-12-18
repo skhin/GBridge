@@ -8,6 +8,8 @@ Initially, I could not find anyone else on Google who had coded the Glass Bridge
 
 Capitalizing on its popularity, and my own imagination, I decided to tackle this challenge.
 
+You can find the site on: https://g-bridge.netlify.app/
+
 Squid Game's 5th challenge in episode 7 features the players crossing a faulty glass bridge (one set of tempered and normal glass per row)
 
 Players are tasked to choose either the right or left set without knowing which will cause them to fall to their death.
